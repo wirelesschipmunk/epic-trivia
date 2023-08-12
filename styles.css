@@ -1,0 +1,58 @@
+html,
+body {
+  font-family: "Chillax", sans-serif;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #19191f;
+  color: #cb5e3d;
+  transition: all 0.2s;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #2b2b34;
+  color: #cb5e3d;
+  border: solid;
+  transition: all 0.2s;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #43434d;
+  color: whitesmoke;
+  border: none;
+  padding: 0.17em;
+  transition: all 0.2s;
+}
+
+.okBtn {
+  cursor: pointer;
+}
+
+.okBtn:hover {
+  color: #ef6940;
+}
+
+.okBtn:active {
+  color: #ef4040;
+  padding: 0.01em 0.2em;
+}
+
+.wrong {
+  color: #43434d;
+}
+
+.right {
+  color: rgb(80, 197, 80);
+}

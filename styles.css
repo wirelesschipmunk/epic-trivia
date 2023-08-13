@@ -36,12 +36,16 @@ input {
   transition: all 0.2s;
 }
 
+input:focus {
+  outline: #cb5e3d;
+}
+
 .okBtn {
   cursor: pointer;
 }
 
 .okBtn:hover {
-  color: #ef6940;
+  outline: none;
 }
 
 .okBtn:active {

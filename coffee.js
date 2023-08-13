@@ -200,6 +200,11 @@ okBtn.addEventListener("click", () => {
       // add point
       points.textContent = Number(points.textContent) + 1
 
+      for (let i = 0; i < document.querySelectorAll("p").length; i++) {
+        document.querySelectorAll("p")[i].classList.remove("wrong")
+        document.querySelectorAll("span")[i].classList.remove("wrong")
+      }
+
       // get next question
       getNewQuestion()
     } else {

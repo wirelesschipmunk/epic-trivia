@@ -165,7 +165,21 @@ const getQuestion = function () {
 
 getQuestion()
 
+const removeRightAndWrongClass = function () {
+  for (let i = 0; i < document.querySelectorAll("p").length; i++) {
+    document.querySelectorAll("p")[i].classList.remove("wrong")
+    document.querySelectorAll("span")[i].classList.remove("wrong")
+  }
+
+  for (let i = 1; i < document.querySelectorAll("p").length; i++) {
+    document.querySelectorAll("p")[i].classList.remove("right")
+    document.querySelectorAll("span")[i].classList.remove("right")
+  }
+}
+
 const getNewQuestion = function () {
+  removeRightAndWrongClass()
+
   randomQuestionNumber = Math.trunc(Math.random() * questions.size + 1)
   console.log(randomQuestionNumber)
 
@@ -193,20 +207,15 @@ okBtn.addEventListener("click", () => {
     if (answer === question.get("correct answer") + 1) {
       console.log("correct!")
 
-      // add right class (to be added)
-      // document.querySelector(`.answer${answer}`).classList.add("right")
-      // document.querySelectorAll("p")[answer - 1].classList.add("right")
+      // add right class
+      document.querySelector(`.answer${answer}`).classList.add("right")
+      document.querySelectorAll("p")[answer - 1].classList.add("right")
 
       // add point
       points.textContent = Number(points.textContent) + 1
 
-      for (let i = 0; i < document.querySelectorAll("p").length; i++) {
-        document.querySelectorAll("p")[i].classList.remove("wrong")
-        document.querySelectorAll("span")[i].classList.remove("wrong")
-      }
-
       // get next question
-      getNewQuestion()
+      setTimeout(getNewQuestion, 500)
     } else {
       // add wrong class
       document.querySelector(`.answer${answer}`).classList.add("wrong")
